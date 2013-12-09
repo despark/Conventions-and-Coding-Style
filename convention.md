@@ -1,6 +1,6 @@
 # Conventions and Coding Style #
 Following Despark's coding style is mandatory. This makes code more readable and allows for easier code sharing and contributing inside the team. 
-** Following this conventions will make yours and the lives of everybody in the company easier **
+**Following this conventions will make yours and the lives of everybody in the company easier**
 ## Class Names and File Location ##
 Class names in Kohana follow a strict convention to facilitate autoloading. Class names should have uppercase first letters with underscores to separate words. Underscores are significant as they directly reflect the file location in the filesystem.
 
