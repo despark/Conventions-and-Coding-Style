@@ -187,14 +187,14 @@ Vertical spacing (for multi-line) is done with spaces. Tabs are not good for ver
           .'indenting with tabs.';
 
 ### String Concatenation ###
-Always put spaces around the concatenation operator:
+Do NOT put spaces around the concatenation operator:
 
     // Correct:
-    $str = 'one' . $var . 'two';
+    $str = 'one'.$var.'two';
      
     // Incorrect:
+    $str = 'one' . $var . 'two';
     $str = 'one'. $var .'two';
-    $str = 'one'.$var.'two';
 
 ### Single Line Statements ###
 Single-line IF statements should only be used when breaking normal execution (e.g. return or continue):
@@ -217,13 +217,13 @@ Single-line IF statements should only be used when breaking normal execution (e.
         $baz = $bar + 2;
 
 ### Comparison Operations ###
-Please use standard logical operators for comarison:
+Please use AND / OR logical operators for comarison:
 
     // Correct:
-    if (($foo == $bar) || ($b == $c))
+    if (($foo AND $bar) OR ($b AND $c))
      
     // Incorrect:
-    if (($foo AND $bar) OR ($b AND $c))
+    if (($foo == $bar) || ($b == $c))
 
 Please use elseif, not else if:
 

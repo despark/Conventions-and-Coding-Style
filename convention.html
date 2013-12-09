@@ -220,14 +220,14 @@ $weDontWantThis = 'understood?';
 
 <h3>String Concatenation</h3>
 
-<p>Always put spaces around the concatenation operator:</p>
+<p>Do NOT put spaces around the concatenation operator:</p>
 
 <pre><code>// Correct:
-$str = 'one' . $var . 'two';
+$str = 'one'.$var.'two';
 
 // Incorrect:
+$str = 'one' . $var . 'two';
 $str = 'one'. $var .'two';
-$str = 'one'.$var.'two';
 </code></pre>
 
 <h3>Single Line Statements</h3>
@@ -254,13 +254,13 @@ if ($baz == $bun)
 
 <h3>Comparison Operations</h3>
 
-<p>Please use standard logical operators for comarison:</p>
+<p>Please use AND / OR logical operators for comarison:</p>
 
 <pre><code>// Correct:
-if (($foo == $bar) || ($b == $c))
+if (($foo AND $bar) OR ($b AND $c))
 
 // Incorrect:
-if (($foo AND $bar) OR ($b AND $c))
+if (($foo == $bar) || ($b == $c))
 </code></pre>
 
 <p>Please use elseif, not else if:</p>
