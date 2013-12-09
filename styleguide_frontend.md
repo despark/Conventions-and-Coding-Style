@@ -44,3 +44,29 @@ styles
 │   ├── _modals.scss // Modal dialogs
 └── vendor  // All third party stuff
 ```
+
+## Measurements ##
+Amidst the diversity of CSS measurement systems it can be difficult for web developers to understand which units to use where, and when, on their pages. The instinct is to use just one system for everything, but that decision can severely limit the execution of your designs.
+
+What follows is a list of suggestions, not absolute rules
+
+### Pixels (px) ###
+<b>Use for:</b> hairline borders and general elements when creating fixed-width designs; values for CSS shadow displacement. Avoid using in `@media` breakpoints, as doing so breaks pages when they are zoomed: use `rem` or `em` instead.
+
+<b>Don't use for:</b> typography. (Exception: setting a base font-size in a CSS reset).
+
+### Percentage (%) ###
+<b>Use for:</b> making responsive images and containers; setting `height` on the body in some cases.
+
+<b>Don't use for:</b> typography. (Exception: `font-size` CSS `reset`.)
+
+### em, ex, rem ###
+<b>Use for:</b> typography, and elements related to typography (margins, for example), with the understanding that `em` and `ex` have a subtle “gotchas” when used in complex layouts. Consider using `rem` as an alternative.
+
+### Points ###
+<b>Use for:</b> print stylesheets.
+
+<b>Don’t use for:</b> anything else.
+
+### Raw numbers ###
+While almost every CSS property requires that the measurement system be specified in the declaration, a few are best used with plain integer or floating-point values. In particular, `line-height` and `border-image` should be used with raw numbers.
