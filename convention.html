@@ -1,36 +1,144 @@
-<h1>Conventions and Coding Style</h1>
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>convention</title></head><body><h1 id="conventions-and-coding-style">Conventions and Coding Style</h1>
 <p>Following Despark's coding style is mandatory. This makes code more readable and allows for easier code sharing and contributing inside the team. 
 <strong>Following this conventions will make yours and the lives of everybody in the company easier</strong></p>
-
-<h2>Class Names and File Location</h2>
-
+<h2 id="class-names-and-file-location">Class Names and File Location</h2>
 <p>Class names in Kohana follow a strict convention to facilitate autoloading. Class names should have uppercase first letters with underscores to separate words. Underscores are significant as they directly reflect the file location in the filesystem.</p>
-
 <p>The following conventions apply:</p>
-
 <ol>
 <li>CamelCased class names should be used when it is undesirable to create a new directory level.</li>
 <li>All class file names and directory names must match the case of the class as per PSR-0.</li>
 <li>All classes should be in the classes directory. This may be at any level in the cascading filesystem.</li>
 </ol>
-
-<h3>Examples</h3>
-
+<h3 id="examples">Examples</h3>
 <p>Remember that in a class, an underscore means a new directory. Consider the following examples:</p>
-
-<h1>Coding Standards</h1>
-
+<h1 id="coding-standards">Coding Standards</h1>
 <p>In order to produce highly consistent source code, we ask that everyone follow the coding standards as closely as possible.</p>
-
-<h2>Brackets</h2>
-
+<h2 id="brackets">Brackets</h2>
 <p>Please use BSD/Allman Style bracketing.</p>
-
-<h3>Curly Brackets</h3>
-
+<h3 id="curly-brackets">Curly Brackets</h3>
 <p>Curly brackets are placed on their own line, indented to the same level as the control statement.</p>
-
 <pre><code>// Correct
 if ($a === $b)
 {
@@ -48,11 +156,8 @@ if ($a === $b) {
     ...
 }
 </code></pre>
-
-<h3>Class Brackets</h3>
-
+<h3 id="class-brackets">Class Brackets</h3>
 <p>The only exception to the curly bracket rule is, the opening bracket of a class goes on the same line.</p>
-
 <pre><code>// Correct
 class Foo {
 
@@ -60,22 +165,16 @@ class Foo {
 class Foo
 {
 </code></pre>
-
-<h3>Empty Brackets</h3>
-
+<h3 id="empty-brackets">Empty Brackets</h3>
 <p>Don't put any characters inside empty brackets.</p>
-
 <pre><code>// Correct
 class Foo {}
 
 // Incorrect
 class Foo { }
 </code></pre>
-
-<h3>Array Brackets</h3>
-
+<h3 id="array-brackets">Array Brackets</h3>
 <p>Arrays may be single line or multi-line.</p>
-
 <pre><code>array('a' =&gt; 'b', 'c' =&gt; 'd')
 
 array(
@@ -83,11 +182,8 @@ array(
     'c' =&gt; 'd',
 )
 </code></pre>
-
-<h4>Opening Parenthesis</h4>
-
+<h4 id="opening-parenthesis">Opening Parenthesis</h4>
 <p>The opening array parenthesis goes on the same line.</p>
-
 <pre><code>// Correct
 array(
     ...
@@ -99,13 +195,9 @@ array
     ...
 )
 </code></pre>
-
-<h4>Closing parenthesis</h4>
-
-<h5>Single Dimension</h5>
-
+<h4 id="closing-parenthesis">Closing parenthesis</h4>
+<h5 id="single-dimension">Single Dimension</h5>
 <p>The closing parenthesis of a multi-line single dimension array is placed on its own line, indented to the same level as the assignment or statement.</p>
-
 <pre><code>// Correct
 $array = array(
     ...
@@ -116,11 +208,8 @@ $array = array(
     ...
     )
 </code></pre>
-
-<h5>Multidimensional</h5>
-
+<h5 id="multidimensional">Multidimensional</h5>
 <p>The nested array is indented one tab to the right, following the single dimension rules.</p>
-
 <pre><code>// Correct
 array(
     'arr' =&gt; array(
@@ -136,9 +225,7 @@ array(
     'arr' =&gt; array(...),
 )
 </code></pre>
-
-<h4>Arrays as Function Arguments</h4>
-
+<h4 id="arrays-as-function-arguments">Arrays as Function Arguments</h4>
 <pre><code>// Correct
 do(array(
     ...
@@ -149,9 +236,7 @@ do(array(
     ...
     ))
 </code></pre>
-
 <p>As noted at the start of the array bracket section, single line syntax is also valid.</p>
-
 <pre><code>// Correct
 do(array(...))
 
@@ -159,13 +244,9 @@ do(array(...))
 do($bar, 'this is a very long line',
     array(...));
 </code></pre>
-
-<h3>Naming Conventions</h3>
-
+<h3 id="naming-conventions">Naming Conventions</h3>
 <p>Kohana uses under_score naming, not camelCase naming.</p>
-
-<h4>Classes</h4>
-
+<h4 id="classes">Classes</h4>
 <pre><code>// Controller class, uses Controller_ prefix
 class Controller_Apple extends Controller {
 
@@ -175,28 +256,20 @@ class Model_Cheese extends Model {
 // Regular class
 class Peanut {
 </code></pre>
-
 <p>When creating an instance of a class, don't use parentheses if you're not passing something on to the constructor:</p>
-
 <pre><code>// Correct:
 $db = new Database;
 
 // Incorrect:
 $db = new Database();
 </code></pre>
-
-<h4>Functions and Methods</h4>
-
+<h4 id="functions-and-methods">Functions and Methods</h4>
 <p>Functions should be all lowercase, and use under_scores to separate words:</p>
-
 <pre><code>function drink_beverage($beverage)
 {
 </code></pre>
-
-<h4>Variables</h4>
-
+<h4 id="variables">Variables</h4>
 <p>All variables should be lowercase and use under_score, not camelCase:</p>
-
 <pre><code>// Correct:
 $foo = 'bar';
 $long_example = 'uses underscores';
@@ -204,24 +277,17 @@ $long_example = 'uses underscores';
 // Incorrect:
 $weDontWantThis = 'understood?';
 </code></pre>
-
-<h3>Indentation</h3>
-
+<h3 id="indentation">Indentation</h3>
 <p>You must use tabs to indent your code. Using spaces for tabbing is strictly forbidden.</p>
-
 <p>Vertical spacing (for multi-line) is done with spaces. Tabs are not good for vertical alignment because different people have different tab widths.</p>
-
 <pre><code>$text = 'this is a long text block that is wrapped. Normally, we aim for '
       .'wrapping at 80 chars. Vertical alignment is very important for '
       .'code readability. Remember that all indentation is done with tabs,'
       .'but vertical alignment should be completed with spaces, after '
       .'indenting with tabs.';
 </code></pre>
-
-<h3>String Concatenation</h3>
-
+<h3 id="string-concatenation">String Concatenation</h3>
 <p>Do NOT put spaces around the concatenation operator:</p>
-
 <pre><code>// Correct:
 $str = 'one'.$var.'two';
 
@@ -229,11 +295,8 @@ $str = 'one'.$var.'two';
 $str = 'one' . $var . 'two';
 $str = 'one'. $var .'two';
 </code></pre>
-
-<h3>Single Line Statements</h3>
-
+<h3 id="single-line-statements">Single Line Statements</h3>
 <p>Single-line IF statements should only be used when breaking normal execution (e.g. return or continue):</p>
-
 <pre><code>// Acceptable:
 if ($foo == $bar)
     return $foo;
@@ -251,31 +314,23 @@ if ($foo == $bar)
 if ($baz == $bun)
     $baz = $bar + 2;
 </code></pre>
-
-<h3>Comparison Operations</h3>
-
+<h3 id="comparison-operations">Comparison Operations</h3>
 <p>Please use AND / OR logical operators for comarison:</p>
-
 <pre><code>// Correct:
 if (($foo AND $bar) OR ($b AND $c))
 
 // Incorrect:
 if (($foo == $bar) || ($b == $c))
 </code></pre>
-
 <p>Please use elseif, not else if:</p>
-
 <pre><code>// Correct:
 elseif ($bar)
 
 // Incorrect:
 else if($bar)
 </code></pre>
-
-<h4>Switch Structures</h4>
-
+<h4 id="switch-structures">Switch Structures</h4>
 <p>Each case, break and default should be on a separate line. The block inside a case or default must be indented by 1 tab.</p>
-
 <pre><code>switch ($var)
 {
     case 'bar':
@@ -290,11 +345,8 @@ else if($bar)
     break;
 }
 </code></pre>
-
-<h3>Parentheses</h3>
-
+<h3 id="parentheses">Parentheses</h3>
 <p>There should be one space after statement name, followed by a parenthesis. The ! (bang) character must have a space on either side to ensure maximum readability. Except in the case of a bang or type casting, there should be no whitespace after an opening parenthesis or before a closing parenthesis.</p>
-
 <pre><code>// Correct:
 if ($foo == $bar)
 if ( ! $foo)
@@ -306,31 +358,21 @@ if ((int) $foo)
 if ( $foo == $bar )
 if (! $foo)
 </code></pre>
-
-<h3>Ternaries</h3>
-
+<h3 id="ternaries">Ternaries</h3>
 <p>All ternary operations should follow a standard format. Use parentheses around expressions only, not around just variables.</p>
-
 <pre><code>$foo = ($bar == $foo) ? $foo : $bar;
 $foo = $bar ? $foo : $bar;
 </code></pre>
-
 <p>All comparisons and operations must be done inside of a parentheses group:</p>
-
 <pre><code>$foo = ($bar &gt; 5) ? ($bar + $foo) : strlen($bar);
 </code></pre>
-
 <p>When separating complex ternaries (ternaries where the first part goes beyond ~80 chars) into multiple lines, spaces should be used to line up operators, which should be at the front of the successive lines:</p>
-
 <pre><code>$foo = ($bar == $foo)
      ? $foo
      : $bar;
 </code></pre>
-
-<h3>Type Casting</h3>
-
+<h3 id="type-casting">Type Casting</h3>
 <p>Type casting should be done with spaces on each side of the cast:</p>
-
 <pre><code>// Correct:
 $foo = (string) $bar;
 if ( (string) $bar)
@@ -338,18 +380,14 @@ if ( (string) $bar)
 // Incorrect:
 $foo = (string)$bar;
 </code></pre>
-
 <p>When possible, please use type casting instead of ternary operations:</p>
-
 <pre><code>// Correct:
 $foo = (bool) $bar;
 
 // Incorrect:
 $foo = ($bar == TRUE) ? TRUE : FALSE;
 </code></pre>
-
 <p>When casting type to integer or boolean, use the short format:</p>
-
 <pre><code>// Correct:
 $foo = (int) $bar;
 $foo = (bool) $bar;
@@ -358,11 +396,8 @@ $foo = (bool) $bar;
 $foo = (integer) $bar;
 $foo = (boolean) $bar;
 </code></pre>
-
-<h3>Constants</h3>
-
+<h3 id="constants">Constants</h3>
 <p>Always use uppercase for constants:</p>
-
 <pre><code>// Correct:
 define('MY_CONSTANT', 'my_value');
 $a = TRUE;
@@ -373,84 +408,58 @@ define('MyConstant', 'my_value');
 $a = True;
 $b = null;
 </code></pre>
-
 <p>Place constant comparisons at the end of tests:</p>
-
 <pre><code>// Correct:
 if ($foo !== FALSE)
 
 // Incorrect:
 if (FALSE !== $foo)
 </code></pre>
-
 <p>This is a slightly controversial choice, so I will explain the reasoning. If we were to write the previous example in plain English, the correct example would read:</p>
-
 <pre><code>if variable $foo is not exactly FALSE
 </code></pre>
-
 <p>And the incorrect example would read:</p>
-
 <pre><code>if FALSE is not exactly variable $foo
 </code></pre>
-
 <p>Since we are reading left to right, it simply doesn't make sense to put the constant first.</p>
-
-<h3>Comments</h3>
-
-<h4>One-line Comments</h4>
-
+<h3 id="comments">Comments</h3>
+<h4 id="one-line-comments">One-line Comments</h4>
 <p>Use //, preferably above the line of code you're commenting on. Leave a space after it and start with a capital. Never use #.</p>
-
 <pre><code>// Correct
 
 //Incorrect
 // incorrect
 # Incorrect
 </code></pre>
-
-<h3>Regular Expressions</h3>
-
+<h3 id="regular-expressions">Regular Expressions</h3>
 <p>When coding regular expressions please use PCRE rather than the POSIX flavor. PCRE is considered more powerful and faster.</p>
-
 <pre><code>// Correct:
 if (preg_match('/abc/i', $str))
 
 // Incorrect:
 if (eregi('abc', $str))
 </code></pre>
-
-<p>Use single quotes around your regular expressions rather than double quotes. Single-quoted strings are more convenient because of their simplicity. Unlike double-quoted strings they don't support variable interpolation nor integrated backslash sequences like 
- or     , etc.</p>
-
+<p>Use single quotes around your regular expressions rather than double quotes. Single-quoted strings are more convenient because of their simplicity. Unlike double-quoted strings they don't support variable interpolation nor integrated backslash sequences like \n or \t, etc.</p>
 <pre><code>// Correct:
 preg_match('/abc/', $str);
 
 // Incorrect:
 preg_match("/abc/", $str);
 </code></pre>
-
-<p>When performing a regular expression search and replace, please use the $n notation for backreferences. This is preferred over 
-.</p>
-
+<p>When performing a regular expression search and replace, please use the $n notation for backreferences. This is preferred over \n.</p>
 <pre><code>// Correct:
 preg_replace('/(\d+) dollar/', '$1 euro', $str);
 
 // Incorrect:
-preg_replace('/(\d+) dollar/', '\1 euro', $str);
+preg_replace('/(\d+) dollar/', '\\1 euro', $str);
 </code></pre>
-
 <p>Finally, please note that the $ character for matching the position at the end of the line allows for a following newline character. Use the D modifier to fix this if needed. More info.</p>
-
 <pre><code>$str = "email@example.com&lt;script type="text/javascript"&gt;
 /* &lt;![CDATA[ */
 (function(){try{var s,a,i,j,r,c,l,b=document.getElementsByTagName("script");l=b[b.length-1].previousSibling;a=l.getAttribute('data-cfemail');if(a){s='';r=parseInt(a.substr(0,2),16);for(j=2;a.length-j;j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}s=document.createTextNode(s);l.parentNode.replaceChild(s,l);}}catch(e){}})();
 </code></pre>
-
-<p>/* ]]> */
-    </script>
-";</p>
-
+<p>/<em> ]]&gt; </em>/
+    </script>\n";</p>
 <pre><code>preg_match('/^.+@.+$/', $str);  // TRUE
 preg_match('/^.+@.+$/D', $str); // FALSE
-</code></pre>
-
+</code></pre></body></html>
