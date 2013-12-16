@@ -1,5 +1,5 @@
 # Conventions and Coding Style #
-Following Despark's coding style is mandatory. This makes code more readable and allows for easier code sharing and contributing inside the team. 
+Following Despark's coding style is mandatory. This makes code more readable and allows for easier code sharing and contributing inside the team.
 **Following this conventions will make yours and the lives of everybody in the company easier**
 ## Class Names and File Location ##
 Class names in Kohana follow a strict convention to facilitate autoloading. Class names should have uppercase first letters with underscores to separate words. Underscores are significant as they directly reflect the file location in the filesystem.
@@ -24,7 +24,7 @@ Please use BSD/Allman Style bracketing.
 ### Curly Brackets ###
 Curly brackets are placed on their own line, indented to the same level as the control statement.
 
-```php    
+```php
 // Correct
 if ($a === $b)
 {
@@ -34,7 +34,7 @@ else
 {
     ...
 }
- 
+
 // Incorrect
 if ($a === $b) {
     ...
@@ -49,7 +49,7 @@ The only exception to the curly bracket rule is, the opening bracket of a class 
 ```php
 // Correct
 class Foo {
- 
+
 // Incorrect
 class Foo
 {
@@ -61,7 +61,7 @@ Don't put any characters inside empty brackets.
 ```php
 // Correct
 class Foo {}
- 
+
 // Incorrect
 class Foo { }
 ```
@@ -71,9 +71,9 @@ Arrays may be single line or multi-line.
 
 ```php
 array('a' => 'b', 'c' => 'd')
- 
+
 array(
-    'a' => 'b', 
+    'a' => 'b',
     'c' => 'd',
 )
 ```
@@ -86,7 +86,7 @@ The opening array parenthesis goes on the same line.
 array(
     ...
 )
- 
+
 // Incorrect:
 array
 (
@@ -103,7 +103,7 @@ The closing parenthesis of a multi-line single dimension array is placed on its 
 $array = array(
     ...
 )
- 
+
 // Incorrect
 $array = array(
     ...
@@ -123,7 +123,7 @@ array(
         ...
     ),
 )
- 
+
 array(
     'arr' => array(...),
     'arr' => array(...),
@@ -137,7 +137,7 @@ array(
 do(array(
     ...
 ))
- 
+
 // Incorrect
 do(array(
     ...
@@ -149,7 +149,7 @@ As noted at the start of the array bracket section, single line syntax is also v
 ```php
 // Correct
 do(array(...))
- 
+
 // Alternative for wrapping long lines
 do($bar, 'this is a very long line',
     array(...));
@@ -163,10 +163,10 @@ Kohana uses under_score naming, not camelCase naming.
 ```php
 // Controller class, uses Controller_ prefix
 class Controller_Apple extends Controller {
- 
+
 // Model class, uses Model_ prefix
 class Model_Cheese extends Model {
- 
+
 // Regular class
 class Peanut {
 ```
@@ -176,7 +176,7 @@ When creating an instance of a class, don't use parentheses if you're not passin
 ```php
 // Correct:
 $db = new Database;
- 
+
 // Incorrect:
 $db = new Database();
 ```
@@ -196,7 +196,7 @@ All variables should be lowercase and use under_score, not camelCase:
 // Correct:
 $foo = 'bar';
 $long_example = 'uses underscores';
- 
+
 // Incorrect:
 $weDontWantThis = 'understood?';
 ```
@@ -214,13 +214,57 @@ $text = 'this is a long text block that is wrapped. Normally, we aim for '
       .'indenting with tabs.';
 ```
 
+### String Definitions ###
+
+Use single quote in string definitions
+
+```php
+// Correct:
+$str = 'one';
+
+// Incorrect:
+$str = "one";
+```
+
+You should avoid string interpolation
+
+```php
+$date = date('Y-m-d');
+
+// Correct:
+$str = 'Today is '.$date.' and I have birthday.';
+
+// Incorrect:
+$str = "Today is $date and I have birthday";
+```
+
+The only use of string interpolation should be in expressions which contain strings. For example:
+
+```php
+// Correct:
+DB::expr("IF(`users`.`phone` = '{$phone}', 1, 0)");
+
+// Incorrect:
+DB::expr("IF(`users`.`phone` = '".$phone."', 1, 0)");
+```
+
+When using interpolation always wrap variable in curly brackets
+
+```php
+// Correct:
+DB::expr("IF(`users`.`phone` = '{$phone}', 1, 0)");
+
+// Incorrect:
+DB::expr("IF(`users`.`phone` = '$phone', 1, 0)");
+```
+
 ### String Concatenation ###
 Do NOT put spaces around the concatenation operator:
 
 ```php
 // Correct:
 $str = 'one'.$var.'two';
- 
+
 // Incorrect:
 $str = 'one' . $var . 'two';
 $str = 'one'. $var .'two';
@@ -233,16 +277,16 @@ Single-line IF statements should only be used when breaking normal execution (e.
 // Acceptable:
 if ($foo == $bar)
     return $foo;
- 
+
 if ($foo == $bar)
     continue;
- 
+
 if ($foo == $bar)
     break;
- 
+
 if ($foo == $bar)
     throw new Exception('You screwed up!');
- 
+
 // Not acceptable:
 if ($baz == $bun)
     $baz = $bar + 2;
@@ -254,7 +298,7 @@ Please use AND / OR logical operators for comarison:
 ```php
 // Correct:
 if (($foo AND $bar) OR ($b AND $c))
- 
+
 // Incorrect:
 if (($foo == $bar) || ($b == $c))
 ```
@@ -264,7 +308,7 @@ Please use elseif, not else if:
 ```php
 // Correct:
 elseif ($bar)
- 
+
 // Incorrect:
 else if($bar)
 ```
@@ -295,7 +339,7 @@ There should be one space after statement name, followed by a parenthesis. The !
 // Correct:
 if ($foo == $bar)
 if ( ! $foo)
- 
+
 // Incorrect:
 if($foo == $bar)
 if(!$foo)
@@ -333,7 +377,7 @@ Type casting should be done with spaces on each side of the cast:
 // Correct:
 $foo = (string) $bar;
 if ( (string) $bar)
- 
+
 // Incorrect:
 $foo = (string)$bar;
 ```
@@ -343,7 +387,7 @@ When possible, please use type casting instead of ternary operations:
 ```php
 // Correct:
 $foo = (bool) $bar;
- 
+
 // Incorrect:
 $foo = ($bar == TRUE) ? TRUE : FALSE;
 ```
@@ -354,7 +398,7 @@ When casting type to integer or boolean, use the short format:
 // Correct:
 $foo = (int) $bar;
 $foo = (bool) $bar;
- 
+
 // Incorrect:
 $foo = (integer) $bar;
 $foo = (boolean) $bar;
@@ -368,7 +412,7 @@ Always use uppercase for constants:
 define('MY_CONSTANT', 'my_value');
 $a = TRUE;
 $b = NULL;
- 
+
 // Incorrect:
 define('MyConstant', 'my_value');
 $a = True;
@@ -380,7 +424,7 @@ Place constant comparisons at the end of tests:
 ```php
 // Correct:
 if ($foo !== FALSE)
- 
+
 // Incorrect:
 if (FALSE !== $foo)
 ```
@@ -399,7 +443,7 @@ Use //, preferably above the line of code you're commenting on. Leave a space af
 
 ```php
 // Correct
- 
+
 //Incorrect
 // incorrect
 # Incorrect
@@ -411,7 +455,7 @@ When coding regular expressions please use PCRE rather than the POSIX flavor. PC
 ```php
 // Correct:
 if (preg_match('/abc/i', $str))
- 
+
 // Incorrect:
 if (eregi('abc', $str))
 ```
@@ -421,7 +465,7 @@ Use single quotes around your regular expressions rather than double quotes. Sin
 ```php
 // Correct:
 preg_match('/abc/', $str);
- 
+
 // Incorrect:
 preg_match("/abc/", $str);
 ```
@@ -431,7 +475,7 @@ When performing a regular expression search and replace, please use the $n notat
 ```php
 // Correct:
 preg_replace('/(\d+) dollar/', '$1 euro', $str);
- 
+
 // Incorrect:
 preg_replace('/(\d+) dollar/', '\\1 euro', $str);
 ```
@@ -444,7 +488,342 @@ $str = "email@example.com<script type="text/javascript">
     (function(){try{var s,a,i,j,r,c,l,b=document.getElementsByTagName("script");l=b[b.length-1].previousSibling;a=l.getAttribute('data-cfemail');if(a){s='';r=parseInt(a.substr(0,2),16);for(j=2;a.length-j;j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}s=document.createTextNode(s);l.parentNode.replaceChild(s,l);}}catch(e){}})();
 /* ]]> */
 </script>\n";
-    
+
 preg_match('/^.+@.+$/', $str);  // TRUE
 preg_match('/^.+@.+$/D', $str); // FALSE
+```
+
+### Whitespaces ###
+Operators if, switch, for, foreach, while, etc. are followed by one whitespace and expression wrapped in parentheses
+
+```php
+// Correct:
+if ($variable == 'one') {...}
+foreach ($users as $user) {...}
+
+// Incorrect:
+if($variable == 'one') {...}
+foreach($users as $user) {...}
+```
+
+Don't put whitespace inside parentheses
+
+```php
+// Correct:
+if ($variable == 'one') {...}
+switch ($variable) {...}
+
+// Incorrect:
+if ( $variable == 'one' ) {...}
+switch ( $variable ) {...}
+```
+
+Whitespaces in for
+
+```php
+// Correct:
+for ($i = 1; $i < 10; $i++)
+{
+    // code...
+}
+
+// Incorrect:
+for ($i=1; $i<10; $i++)
+{
+    // code...
+}
+```
+
+Whitespaces in function parameters
+
+```php
+// Correct:
+function my_awesome_function($type, $date, $default = NULL)
+{
+    // code...
+}
+
+// Incorrect:
+function my_awesome_function($type,$date,$default=NULL)
+{
+    // code...
+}
+```
+
+## PHP in HTML ##
+
+In Kohana View files always use short tags for PHP
+
+```php
+// Correct:
+<? if ($expression): ?>
+    <p>Awseome</p>
+<? endif ?>
+
+// Incorrect:
+<?php if ($expression): ?>
+    <p>Awseome</p>
+<?php endif ?>
+```
+
+Single lines of PHP don't need ``` ; ``` at end of line
+
+```php
+// Correct:
+<? endif ?>
+<? endforeach ?>
+<? endfor ?>
+<? $var = 100 ?>
+
+// Incorrect:
+<? endif; ?>
+<? endforeach; ?>
+<? endfor; ?>
+<? $var = 100; ?>
+```
+
+### Indentation ###
+
+Treat PHP tags as HTML tags
+
+```php
+// Correct:
+<ul class="users">
+    <? foreach ($users as $user): ?>
+        <li>
+            <?= HTML::anchor($user->profile_url(), $user->name()) ?>
+        </li>
+    <? endforeach ?>
+</ul>
+
+// Incorrect:
+<ul class="users">
+<? foreach ($users as $user): ?>
+    <li>
+    <?= HTML::anchor($user->profile_url(), $user->name()) ?>
+    </li>
+<? endforeach ?>
+</ul>
+
+// Incorrect:
+<ul class="users">
+    <? foreach ($users as $user): ?>
+    <li>
+        <?= HTML::anchor($user->profile_url(), $user->name()) ?>
+    </li>
+    <? endforeach ?>
+</ul>
+```
+
+```php
+// Correct:
+<ul class="users">
+    <? foreach ($users as $user): ?>
+        <? if ($user->is_admin()): ?>
+            <li>
+                <?= HTML::anchor($user->profile_url(), $user->name()) ?>
+            </li>
+        <? endif ?>
+    <? endforeach ?>
+</ul>
+
+// Incorrect:
+<ul class="users">
+    <? foreach ($users as $user):
+    if ($user->is_admin()): ?>
+        <li>
+            <?= HTML::anchor($user->profile_url(), $user->name()) ?>
+        </li>
+    <? endif;
+endforeach ?>
+</ul>
+```
+
+Switch Structures
+
+```php
+// Correct:
+<div class="subrow">
+    <? switch ($prize->type): ?>
+        <? case 'meal': ?>
+            <span class="discount-name"><?= $prize->name($item->quantity) ?></span>
+        <? break ?>
+        <? case 'free_text': ?>
+            <span class="discount-name"><?= $prize->name($item->quantity) ?></span>
+        <? break ?>
+        <? default: ?>
+            <span class="discount-name"><?= $prize->name() ?></span>
+            <span class="discount-sum"><?= Num::price($item->price, TRUE, 'b', FALSE) ?></span>
+        <? break ?>
+    <? endswitch ?>
+</div>
+
+// Incorrect:
+<div class="subrow">
+    <? switch ($prize->type):
+        case 'meal': ?>
+            <span class="discount-name"><?= $prize->name($item->quantity) ?></span>
+        <? break;
+        case 'free_text': ?>
+            <span class="discount-name"><?= $prize->name($item->quantity) ?></span>
+        <? break;
+        default: ?>
+            <span class="discount-name"><?= $prize->name() ?></span>
+            <span class="discount-sum"><?= Num::price($item->price, TRUE, 'b', FALSE) ?></span>
+        <? break; ?>
+    <? endswitch; ?>
+</div>
+```
+
+Don't indentate PHP code outside of block
+
+```php
+// Correct:
+<?
+$j = $i + 5 / abs($total_pages);
+$variable = 4 + $j;
+?>
+
+// Incorrect:
+<?
+    $j = $i + 5 / abs($total_pages);
+    $variable = 4 + $j;
+?>
+```
+
+Form helpers
+
+```php
+// Correct:
+$measure_form->row('select', 'name', array(
+    'label' => __('lbl_measure'),
+    'choices' => $measures,
+    'include_blank' => TRUE,
+    'custom' => TRUE,
+),
+array(
+    'id' => NULL,
+    'class' => 'measure_type',
+));
+
+// Incorrect:
+$measure_form->row(
+    'select',
+    'name',
+    array(
+        'label' => __('lbl_measure'),
+        'choices' => $measures,
+        'include_blank' => TRUE,
+        'custom' => TRUE,
+        ),
+    array(
+        'id' => NULL,
+        'class' => 'measure_type',
+        )
+    );
+```
+
+## Other good practices ##
+
+##### Avoid defining variables in expressions #####
+
+```php
+// Correct:
+$logged = get_logged_user();
+if ($logged === TRUE)
+{
+    // code...
+}
+
+
+// Incorrect:
+if (($logged = get_logged_user()) === TRUE)
+{
+    // code...
+}
+```
+
+##### Keep expressions as simple as possible #####
+
+```php
+// Correct:
+$orders = Jam::all('orders')->order_by('created_at', 'desc');
+foreach ($orders as $key => $value)
+{
+    # code...
+}
+
+// Incorrect:
+foreach (Jam::all('orders')->order_by('asd', 'desc') as $key => $value)
+{
+    # code...
+}
+
+```
+
+##### Use blank lines to make your code more readable #####
+The "rule" is: put new line when change the logic.
+
+```php
+// Good:
+public function is_it_open()
+{
+    $self = get_self();
+    $self_for_weekday = get_self_weekday();
+
+    $working_now = $self
+        ->and_where('start_hour', '<=', date('H:i:s'))
+        ->and_where('end_hour', '>=', date('H:i:s'))
+        ->and_where('date', '=', date('Y-m-d'))
+        ->and_where('is_closed', '=', '0')
+        ->first();
+
+    $working_now_weekday = $self_for_weekday
+        ->and_where('start_hour', '<=', date('H:i:s'))
+        ->and_where('end_hour', '>=', date('H:i:s'))
+        ->and_where('is_closed', '=', '0')
+        ->and_where('week_day', '=', date('N'))
+        ->first();
+
+    if ($working_now OR $working_now_weekday)
+    {
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+// Bad:
+public function is_it_open()
+{
+    $self = get_self();
+    $self_for_weekday = get_self_weekday();
+    $working_now = $self
+        ->and_where('start_hour', '<=', date('H:i:s'))
+        ->and_where('end_hour', '>=', date('H:i:s'))
+        ->and_where('date', '=', date('Y-m-d'))
+        ->and_where('is_closed', '=', '0')
+        ->first();
+    $working_now_weekday = $self_for_weekday
+        ->and_where('start_hour', '<=', date('H:i:s'))
+        ->and_where('end_hour', '>=', date('H:i:s'))
+        ->and_where('is_closed', '=', '0')
+        ->and_where('week_day', '=', date('N'))
+        ->first();
+    if($working_now || $working_now_weekday)
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+```
+
+##### Use Date Constants for minutes, hours, days, etc. instead of 60, 3600, 24*3600 #####
+
+```php
+// Correct:
+return date('H.i', strtotime($working_tommorow->start_hour)) * Date::HOUR + (Date::DAY - $current_time_in_seconds);
+
+// Incorrect:
+return date('H.i', strtotime($working_tommorow->start_hour)) * 3600 + (24*3600 - $current_time_in_seconds);
 ```
