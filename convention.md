@@ -827,3 +827,13 @@ return date('H.i', strtotime($working_tommorow->start_hour)) * Date::HOUR + (Dat
 // Incorrect:
 return date('H.i', strtotime($working_tommorow->start_hour)) * 3600 + (24*3600 - $current_time_in_seconds);
 ```
+
+##### When adding external services like Google Analytics make them work only for production environment #####
+
+```php
+<? if (Kohana::$environment === Kohana::PRODUCTION): ?>
+    <script>
+        // external service code...
+    </script>
+<? endif ?>
+```
