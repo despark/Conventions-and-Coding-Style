@@ -58,7 +58,7 @@ When we at Despark write HTML, CSS/SASS and Javascript we have a certain set of 
 Usually every front-end part of project contains of several HTML, CSS and Javascript files. As a general rule every front-end project starts with: **index.php, style.css and script.js**** **and use the following directory structure:
 
 <pre>
-  <code>
+    <code>
 /static_html
     index.php
 /images /* All images. You can create as many sub directories as you decide */
@@ -69,7 +69,7 @@ Usually every front-end part of project contains of several HTML, CSS and Javasc
 /js /* All JS files we generate */
     script.js /* Main JS file */
     /vendor /* All third party scripts are stored here. jQuery and plug-ins for example */
-  </code>
+    </code>
 </pre>
 
 
@@ -81,19 +81,20 @@ Usually every front-end part of project contains of several HTML, CSS and Javasc
 
 No matter you are writing HTML, CSS or Javascript always use **"Tab Size: 4"****.** Do not use “tabs" or mixed type “spaces and tabs" indentation.
 
-### Capitalization 
+### Capitalization
 
 Use only lowercase. All code has to be lowercase: This applies to HTML element names, attributes, attribute values (unless text/CDATA), CSS selectors, properties, and property values (with the exception of strings).
 
-<pre>
-  <code>
+
 <!-- Not recommended -->
-```html
+``` html
 <A HREF="#">Click here</A>
 
 <!-- Recommended -->
 <a href="#">Click here</a>
+```
 
+``` css
 /* Not recommended */
 .Nav {
   background-color: #A4B2AC;
@@ -104,8 +105,7 @@ Use only lowercase. All code has to be lowercase: This applies to HTML element n
   background-color: #a4b2ac;
 }
 ```
-  </code>
-</pre>
+
 
 
 ## Cross-Browser support
@@ -154,28 +154,21 @@ As a rule we use by default HTML5. Test your markup against the[ W3C validator](
 
 As it is mentioned above we use HTML5 therefore you have always to use:
 
-<pre>
-  <code>
-  ```html
-<!doctype html>
+```html
+    <!doctype html>
 ```
-  </code>
-</pre>
 
 
 Always use **UTF-8** **encoding** and set appropriate language HTML attribute of HTML element. Also ensure that your text editor use proper encoding too.
 
-<pre>
-  <code>
-  ```html
+
+```html
 <!doctype html>
 <html lang="bg">
     <head>
-     <meta charset="UTF-8">
-….
+         <meta charset="UTF-8">
+        ….
 ```
-  </code>
-</pre>
 
 
 ### Other Head Code
@@ -186,9 +179,7 @@ Links to Javascripts have to be placed in document body before closing **</body>
 
 Specifying type attributes in these contexts is not necessary as HTML5 implies **text/css** and **text/javascript** as defaults. This can be safely done even for older browsers. 
 
-<pre>
-  <code>
-  ```html
+```html
 <!-- Not recommended -->
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
@@ -197,8 +188,6 @@ Specifying type attributes in these contexts is not necessary as HTML5 implies *
 <link rel="stylesheet" href="css/style.css">
 <script src="js/vendor/jquery.min.js"></script>
 ```
-  </code>
-</pre>
 
 
 **  **
@@ -211,10 +200,8 @@ Use HTML according to its purpose. Use elements for what they have been created 
 
 Using HTML according to its purpose is important for accessibility, reuse, and code efficiency reasons.
 
-<pre>
-  <code>
-<!-- Not recommended -->
 ```html
+<!-- Not recommended -->
 <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, incidunt aut amet minus saepe molestias provident itaque nisi?<br>
 Repellat quasi numquam quod dicta eveniet ab necessitatibus possimus nulla excepturi voluptatem?</div>
 
@@ -238,9 +225,6 @@ Repellat quasi numquam quod dicta eveniet ab necessitatibus possimus nulla excep
   <li><a href="url.html">List 4</a></li>
 </ul>
 ```
-  </code>
-</pre>
-
 
 ### HTML Quotation Marks
 
@@ -252,8 +236,7 @@ Image formats we usually use are JPG, PNG and SVG. JPG’s are prefered for phot
 
 Sometimes happens images to be used as buttons or icons. Never leave only image and always add meaningful text. Use CSS styles to hide text (**text-indent: -9999px or other techniques**).
 
-<pre>
-    <code>
+``` html
 <!-- Not recommended -->
 
 <a href="url.html">
@@ -261,11 +244,11 @@ Sometimes happens images to be used as buttons or icons. Never leave only image 
 </a>
 
 <!-- Recommended -->
-`<a href="url.html">`
-    `<img src="img/red-button.png">`
-    `<span>Click me</span>`
-`</a>`
-
+<a href="url.html">
+    <img src="img/red-button.png">
+    <span>Click me</span>
+</a>
+```
 and then something like this:
 
 a span { text-indent: -9999px; }
@@ -275,11 +258,8 @@ or the modern version:
 a span {
   text-indent: 100%;
   white-space: nowrap;
-  overflow: hidden; 
+  overflow: hidden;
 }
-
-    </code>
-</pre>
 
 
 # CSS
@@ -301,10 +281,9 @@ Include the CSS file by using **LINK**  not **@import **and do not include it in
 
 Where possible, avoid expensive CSS selectors. For example, **avoid the * wildcard selector** and **don't qualify ID and class names with type selectors**. Avoid more than 3 levels of nesting selectors. This is important for the performance when DOM elements are thousands or even tens of thousands.
 
-<pre>
-  <code>
-/* Not recommended */
+
 ```css
+/* Not recommended */
 section.intro { … }
 table#addresses { … }
 
@@ -317,16 +296,12 @@ table#addresses { … }
 
 .column-left li { … }
 ```
-  </code>
-</pre>
 
 
 ### Shorthand Properties
 
 Use shorthand properties where possible. Using shorthand properties is useful for code efficiency and understandability.
 
-<pre>
-  <code>
 ```css
 /* Not recommended */
 .toolbar {
@@ -347,32 +322,25 @@ Use shorthand properties where possible. Using shorthand properties is useful fo
   padding: 0 1em 2em;
 }
 ```
-  </code>
-</pre>
 
 
 ### 0 and Units and Leading 0s
 
 Do not use units after 0 values unless they are required. Do not put 0s in front of values or lengths between 0 and 1. 
 
-<pre>
-  <code>
 ```css
 /* Recommended */
 padding: 0;
 margin-top: 0;
 opacity: .54;
 ```
-  </code>
-</pre>
 
 
 ### Hexadecimal Notation
 
 For color values that permit it, 3 character hexadecimal notation is shorter.
 
-<pre>
-  <code>
+
 ```css
 /* Not recommended */
 color: #eecc44;
@@ -380,16 +348,14 @@ color: #eecc44;
 /* Recommended */
 color: #ec4;
 ```
-  </code>
-</pre>
+
 
 
 ID and Class Name Delimiters
 
 Do not concatenate words and abbreviations in selectors by any characters other than hyphens, in order to improve understanding and scannability.
 
-<pre>
-  <code>
+
 ```css
 /* Not recommended: does not separate the words "demo" and “image" */
 .demoimage {}
@@ -400,8 +366,7 @@ Do not concatenate words and abbreviations in selectors by any characters other 
 .demo-image {}
 .error-status {}
 ```
-  </code>
-</pre>
+
 
 
 Uppercase texts
@@ -416,8 +381,7 @@ At minimum, format CSS with selectors on one line and each property on its own l
 
 Also, if you specify multiple selectors, it's a good idea to start each on new line. This prevents lines from growing long and improves readability as well as version control workflow.
 
-<pre>
-  <code>
+
   ```css
 .nav {
   color: #4a5b6c;
@@ -428,8 +392,7 @@ Also, if you specify multiple selectors, it's a good idea to start each on new l
   color: red;
 }
 ```
-  </code>
-</pre>
+
 
 
 Declaration Order
@@ -440,8 +403,7 @@ Try to put declarations in alphabetical order in order to achieve consistent cod
 
 End every declaration with a semicolon for consistency and extensibility reasons.
 
-<pre>
-  <code>
+
   ```css
 /* Not recommended */
 .test {
@@ -455,16 +417,14 @@ End every declaration with a semicolon for consistency and extensibility reasons
   height: 100px;  /* ← */
 }
 ```
-  </code>
-</pre>
+
 
 
 ### Property Name Stops
 
 Use a space after a property name’s colon. Always use a single space between property and value (but no space between property and colon) for consistency reasons.
 
-<pre>
-  <code>
+
   ```css
 /* Not recommended */
 h3 {
@@ -476,16 +436,14 @@ h3 {
   font-weight: bold;
 }
 ```
-  </code>
-</pre>
+
 
 
 ### Declaration Block Separation
 
 Use a space between the last selector and the declaration block. Always use a single space between the last selector and the opening brace that begins the declaration block. The opening brace should be on the same line as the last selector in a given rule.
 
-<pre>
-  <code>
+
   ```css
 /* Not recommended: missing space */
 #video{
@@ -503,8 +461,7 @@ Use a space between the last selector and the declaration block. Always use a si
   margin-top: 1em;
 }
 ```
-  </code>
-</pre>
+
 
 
 **Organization**
@@ -558,22 +515,19 @@ You should follow CSS formatting guidelines you are already read above. In short
 
 Knowing first that this class inherits another whole set of rules from elsewhere is good.
 
-<pre>
-  <code>
+
   ```css
 .btn {
 @extend .btn-small;
 // ...
 }
 ```
-  </code>
-</pre>
+
 
 
 List "Regular" Styles Next
 
-<pre>
-  <code>
+
   ```css
 .btn {
 @extend .btn-small;
@@ -581,16 +535,14 @@ width: 80px;
 // ...
 }
 ```
-  </code>
-</pre>
+
 
 
 ### List @include(s) Next
 
 This visually separates the @extends and @includes as well as groups the @includes for easier reading. You might also want to make the call on separating user-authored @includes and vendor-provided @includes.
 
-<pre>
-  <code>
+
 ```css
 .btn {
 @extend .btn-small;
@@ -599,16 +551,14 @@ width: 80px;
 // ...
 }
 ```
-  </code>
-</pre>
+
 
 
 Nested Selectors Last
 
 And nothing goes after the nested stuff. And the same order as above within the nested selector would apply.
 
-<pre>
-  <code>
+
 ```scss
 .btn {
     @extend .btn-small;
@@ -622,16 +572,14 @@ And nothing goes after the nested stuff. And the same order as above within the 
     }
 }
 ```
-  </code>
-</pre>
+
 
 
 ### All Vendor Prefixes Use @mixins
 
 Vendor prefixes are a time-sensitive thing so use @mixins. Boubon’s mixin **@prefixer** for example.
 
-<pre>
-  <code>
+
 ```scss
 // SCSS
 .box {
@@ -645,16 +593,14 @@ Vendor prefixes are a time-sensitive thing so use @mixins. Boubon’s mixin **@p
     box-sizing: border-box;
 }
 ```
-  </code>
-</pre>
+
 
 
 Maximum Nesting: Three Levels Deep
 
 If you're deeper than that, you're writing a crappy selector that it's too reliant on HTML structure (fragile), too specific (too powerful), and not very reusable.
 
-<pre>
-  <code>
+
 ```scss
 .weather {
     .cities {
@@ -664,8 +610,7 @@ If you're deeper than that, you're writing a crappy selector that it's too relia
     }
 }
 ```
-  </code>
-</pre>
+
 
 
 **Organization**
@@ -674,8 +619,7 @@ List Global Dependencies First, Then Author Dependencies, Then Elements, Then Mo
 
 The dependencies like Bourbon, colors, settings and mixins generate no compiled CSS at all, they are purely code dependencies. Listing the Base next means that more specific "parts", which come after, have the power to override patterns without problems.
 
-<pre>
-  <code>
+
 ```css
 /* Vendor/Global Dependencies */
 @import "bourbon";
@@ -697,8 +641,7 @@ The dependencies like Bourbon, colors, settings and mixins generate no compiled 
 @import "modules/header";
 @import "modules/footer";
 ```
-  </code>
-</pre>
+
 
 
 ### Break Into As Many Small Files As Makes Sense
@@ -707,8 +650,7 @@ There is no penalty to splitting into many small files. Do it as much as feels g
 
 Typically we suggest to separate SCSS’s into following file structure:
 
-<pre>
-  <code>
+
   ```css
 style.scss /* Main file no styles directly in them. It is just "table of content" */
     _layout.scss /* Base-level layout (margin, padding, sizing) */
@@ -735,8 +677,7 @@ style.scss /* Main file no styles directly in them. It is just "table of content
 
 /vendor  /* All third party stuff */
 ```
-  </code>
-</pre>
+
 
 
 # Javascript
