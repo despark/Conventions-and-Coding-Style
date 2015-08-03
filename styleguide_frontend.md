@@ -635,28 +635,27 @@ List Global Dependencies First, Then Author Dependencies, Then Elements, Then Mo
 
 The dependencies like Bourbon, colors, settings and mixins generate no compiled CSS at all, they are purely code dependencies. Listing the Base next means that more specific "parts", which come after, have the power to override patterns without problems.
 
-<table>
-  <tr>
-    <td>/* Vendor/Global Dependencies */
-@import "bourbon";
-@import "neat";
+<pre>
+  <code>
+    /* Vendor/Global Dependencies */
+    @import "bourbon";
+    @import "neat";
 
-/* Author Dependencies */
-@import "global/settings";
-@import "global/helpers";
-/* Base */
-@import “global/layout”;
-@import “global/typo”;
-/* Elements */
-@import "elements/tabs";
-@import "elements/buttons";
+    /* Author Dependencies */
+    @import "global/settings";
+    @import "global/helpers";
+    /* Base */
+    @import “global/layout”;
+    @import “global/typo”;
+    /* Elements */
+    @import "elements/tabs";
+    @import "elements/buttons";
 
-/* Modules */
-@import "modules/header";
-@import "modules/footer";
-</td>
-  </tr>
-</table>
+    /* Modules */
+    @import "modules/header";
+    @import "modules/footer";
+  </code>
+</pre>
 
 
 ### Break Into As Many Small Files As Makes Sense
