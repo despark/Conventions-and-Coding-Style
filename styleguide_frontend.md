@@ -263,7 +263,7 @@ Sometimes happens images to be used as buttons or icons. Never leave only image 
 
 <pre>
 <!-- Not recommended -->
-```html
+``` html
 <a href="url.html">
   <img src="img/red-button.png">
 </a>
@@ -279,7 +279,7 @@ and then something like this:
 a span { text-indent: -9999px; }
 
 or the modern version:
-```css
+``` css
 a span {
   text-indent: 100%;
   white-space: nowrap;
