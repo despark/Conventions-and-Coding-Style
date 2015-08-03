@@ -112,30 +112,21 @@ Use only lowercase. All code has to be lowercase: This applies to HTML element n
 
 If legacy browser support is required (older than IE 11) we have to provide graceful degradation and fallbacks but not 1:1 design. Using the CSS hack is not encouraged use conditional includes in HTML header instead.
 
-<pre>
-  <code>
   ```html
 <!--[if lt IE 9]>
   <link rel="stylesheet" href="css/ie8.css">
 <![endif]-->
 ```
-  </code>
-</pre>
-
 
 Or
 
-<pre>
-  <code>
-  ```html
+  ``` html
 <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
 <!--[if IE 7 ]><body class="ie7"> <![endif]-->
 <!--[if IE 8 ]><body class="ie8"> <![endif]-->
 <!--[if IE 9 ]><body class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <body> <!--<![endif]-->
 ```
-  </code>
-</pre>
 
 
 Or you can test if functionality exists by using **[Moderniz**r](http://modernizr.com/).
