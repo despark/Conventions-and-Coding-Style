@@ -262,18 +262,19 @@ Image formats we usually use are JPG, PNG and SVG. JPG’s are prefered for phot
 Sometimes happens images to be used as buttons or icons. Never leave only image and always add meaningful text. Use CSS styles to hide text (**text-indent: -9999px or other techniques**).
 
 <pre>
+    <code>
 <!-- Not recommended -->
-``` html
+
 <a href="url.html">
   <img src="img/red-button.png">
 </a>
 
 <!-- Recommended -->
-<a href="url.html">
-    <img src="img/red-button.png">
-    <span>Click me</span>
-</a>
-```
+`<a href="url.html">`
+    `<img src="img/red-button.png">`
+    `<span>Click me</span>`
+`</a>`
+
 and then something like this:
 
 a span { text-indent: -9999px; }
@@ -285,8 +286,8 @@ a span {
   white-space: nowrap;
   overflow: hidden; 
 }
-```
-  
+
+    </code>
 </pre>
 
 
