@@ -687,19 +687,19 @@ style.scss /* Main file no styles directly in them. It is just "table of content
 * * *
 
 
-** Modules often in use:
+### Modules often in use: ###
 
 [Despark wiki page with tools and libraries ](http://dev.despark.com/wiki/index.php/Front-end_Tools_and_Libraries)
 
-** All in one UI
+### All in one UI ###
 
 [jQuery UI](http://jqueryui.com/) - set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.
 
-** Animations
+### Animations ###
 
 [GSAP](http://www.greensock.com/gsap-js/) - Professional-Grade HTML5 Animation
 
-** Modal Dialogs 
+### Modal Dialogs  ###
 
 [jQuery UI Dialog](http://jqueryui.com/dialog/)
 
@@ -709,17 +709,17 @@ style.scss /* Main file no styles directly in them. It is just "table of content
 
 [http://tympanus.net/Development/ModalWindowEffects/](http://tympanus.net/Development/ModalWindowEffects/)
 
-** Charts
+### Charts ###
 
 [amCharts](http://www.amcharts.com/) - very powerful but it is not free 
 
 [Google Charts](https://developers.google.com/chart/)
 
-** Feature detection
+### Feature detection ###
 
 [Modernizr](http://modernizr.com/)
 
-** Carousels & Sliders 
+### Carousels & Sliders  ###
 
 [Owl Carousel](http://owlgraphic.com/owlcarousel/) - responsive, touch, nice documentation
 
@@ -731,7 +731,7 @@ style.scss /* Main file no styles directly in them. It is just "table of content
 
 [http://tympanus.net/Development/SidebarTransitions/](http://tympanus.net/Development/SidebarTransitions/)
 
-** Image galleries
+### Image galleries ###
 
 [Lightbox 2](http://lokeshdhakar.com/projects/lightbox2/)
 
