@@ -86,8 +86,8 @@ No matter you are writing HTML, CSS or Javascript always use **"Tab Size: 4"****
 Use only lowercase. All code has to be lowercase: This applies to HTML element names, attributes, attribute values (unless text/CDATA), CSS selectors, properties, and property values (with the exception of strings).
 
 
-<!-- Not recommended -->
 ``` html
+<!-- Not recommended -->
 <A HREF="#">Click here</A>
 
 <!-- Recommended -->
@@ -97,12 +97,12 @@ Use only lowercase. All code has to be lowercase: This applies to HTML element n
 ``` css
 /* Not recommended */
 .Nav {
-  background-color: #A4B2AC;
+    background-color: #A4B2AC;
 }
 
 /* Recommended */
 .nav {
-  background-color: #a4b2ac;
+    background-color: #a4b2ac;
 }
 ```
 
@@ -155,7 +155,7 @@ As a rule we use by default HTML5. Test your markup against the[ W3C validator](
 As it is mentioned above we use HTML5 therefore you have always to use:
 
 ```html
-    <!doctype html>
+<!doctype html>
 ```
 
 
@@ -166,7 +166,7 @@ Always use **UTF-8** **encoding** and set appropriate language HTML attribute of
 <!doctype html>
 <html lang="bg">
     <head>
-         <meta charset="UTF-8">
+        <meta charset="UTF-8">
         ….
 ```
 
@@ -250,9 +250,9 @@ Sometimes happens images to be used as buttons or icons. Never leave only image 
 </a>
 ```
 and then something like this:
-
+``` css
 a span { text-indent: -9999px; }
-
+```
 or the modern version:
 ``` css
 a span {
@@ -260,7 +260,7 @@ a span {
   white-space: nowrap;
   overflow: hidden;
 }
-
+```
 
 # CSS
 
@@ -518,8 +518,8 @@ Knowing first that this class inherits another whole set of rules from elsewhere
 
   ```css
 .btn {
-@extend .btn-small;
-// ...
+    @extend .btn-small;
+    // ...
 }
 ```
 
@@ -530,9 +530,9 @@ List "Regular" Styles Next
 
   ```css
 .btn {
-@extend .btn-small;
-width: 80px;
-// ...
+    @extend .btn-small;
+    width: 80px;
+    // ...
 }
 ```
 
@@ -545,10 +545,10 @@ This visually separates the @extends and @includes as well as groups the @includ
 
 ```css
 .btn {
-@extend .btn-small;
-width: 80px;
-@include transition(all 0.3s ease-out);
-// ...
+    @extend .btn-small;
+    width: 80px;
+    @include transition(all 0.3s ease-out);
+    // ...
 }
 ```
 
@@ -651,7 +651,9 @@ There is no penalty to splitting into many small files. Do it as much as feels g
 Typically we suggest to separate SCSS’s into following file structure:
 
 
-  ```css
+<pre>
+    <code>
+        
 style.scss /* Main file no styles directly in them. It is just "table of content" */
     _layout.scss /* Base-level layout (margin, padding, sizing) */
     _base.scss  /* Base-level tags */
@@ -676,7 +678,8 @@ style.scss /* Main file no styles directly in them. It is just "table of content
     _modals.scss /* Modal dialogs */
 
 /vendor  /* All third party stuff */
-```
+    </code>
+</pre>
 
 
 
