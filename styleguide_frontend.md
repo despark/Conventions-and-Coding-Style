@@ -262,7 +262,6 @@ Image formats we usually use are JPG, PNG and SVG. JPG’s are prefered for phot
 Sometimes happens images to be used as buttons or icons. Never leave only image and always add meaningful text. Use CSS styles to hide text (**text-indent: -9999px or other techniques**).
 
 <pre>
-  <code>
 <!-- Not recommended -->
 ```html
 <a href="url.html">
@@ -287,7 +286,7 @@ a span {
   overflow: hidden; 
 }
 ```
-  </code>
+  
 </pre>
 
 
