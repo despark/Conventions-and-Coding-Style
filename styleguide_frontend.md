@@ -60,15 +60,15 @@ Usually every front-end part of project contains of several HTML, CSS and Javasc
 <pre>
   <code>
 /static_html
-index.php
+    index.php
 /images /* All images. You can create as many sub directories as you decide */
+/fonts /* All font files are stored here*/
 /scss  /* Contain the main SCSS file (style.scss) and some helpers for IE support if needed */
-style.css /* Main CSS file */
-/vendor /* All third party CSS’s are stored here */
-   /fonts /* All font files are stored here*/
+    style.css /* Main CSS file */
+    /vendor /* All third party CSS’s are stored here */
 /js /* All JS files we generate */
-script.js /* Main JS file */
-/vendor /* All third party scripts are stored here. jQuery and plug-ins for example */
+    script.js /* Main JS file */
+    /vendor /* All third party scripts are stored here. jQuery and plug-ins for example */
   </code>
 </pre>
 
@@ -79,7 +79,7 @@ script.js /* Main JS file */
 
 ### Indentation
 
-No matter you are writing HTML, CSS or Javascript always use **"Tab Size: 4"****.** Do not use “tabs” or mixed type “spaces and tabs” indentation.
+No matter you are writing HTML, CSS or Javascript always use **"Tab Size: 4"****.** Do not use “tabs" or mixed type “spaces and tabs" indentation.
 
 ### Capitalization 
 
@@ -87,10 +87,12 @@ Use only lowercase. All code has to be lowercase: This applies to HTML element n
 
 <pre>
   <code>
-<!-- Not recommended →
-<A HREF="#”>Click here</A>
-<!-- Recommended →
-<a href=”#”>Click here</a>
+<!-- Not recommended -->
+```html
+<A HREF="#">Click here</A>
+
+<!-- Recommended -->
+<a href="#">Click here</a>
 
 /* Not recommended */
 .Nav {
@@ -101,6 +103,7 @@ Use only lowercase. All code has to be lowercase: This applies to HTML element n
 .nav {
   background-color: #a4b2ac;
 }
+```
   </code>
 </pre>
 
@@ -111,9 +114,11 @@ If legacy browser support is required (older than IE 11) we have to provide grac
 
 <pre>
   <code>
+  ```html
 <!--[if lt IE 9]>
   <link rel="stylesheet" href="css/ie8.css">
 <![endif]-->
+```
   </code>
 </pre>
 
@@ -122,11 +127,13 @@ Or
 
 <pre>
   <code>
+  ```html
 <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
 <!--[if IE 7 ]><body class="ie7"> <![endif]-->
 <!--[if IE 8 ]><body class="ie8"> <![endif]-->
 <!--[if IE 9 ]><body class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <body> <!--<![endif]-->
+```
   </code>
 </pre>
 
@@ -158,7 +165,9 @@ As it is mentioned above we use HTML5 therefore you have always to use:
 
 <pre>
   <code>
+  ```html
 <!doctype html>
+```
   </code>
 </pre>
 
@@ -167,11 +176,13 @@ Always use **UTF-8** **encoding** and set appropriate language HTML attribute of
 
 <pre>
   <code>
+  ```html
 <!doctype html>
 <html lang="bg">
     <head>
      <meta charset="UTF-8">
 ….
+```
   </code>
 </pre>
 
@@ -186,6 +197,7 @@ Specifying type attributes in these contexts is not necessary as HTML5 implies *
 
 <pre>
   <code>
+  ```html
 <!-- Not recommended -->
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
@@ -193,6 +205,7 @@ Specifying type attributes in these contexts is not necessary as HTML5 implies *
 <!-- Recommended -->
 <link rel="stylesheet" href="css/style.css">
 <script src="js/vendor/jquery.min.js"></script>
+```
   </code>
 </pre>
 
@@ -210,6 +223,7 @@ Using HTML according to its purpose is important for accessibility, reuse, and c
 <pre>
   <code>
 <!-- Not recommended -->
+```html
 <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, incidunt aut amet minus saepe molestias provident itaque nisi?<br>
 Repellat quasi numquam quod dicta eveniet ab necessitatibus possimus nulla excepturi voluptatem?</div>
 
@@ -218,20 +232,21 @@ Repellat quasi numquam quod dicta eveniet ab necessitatibus possimus nulla excep
 <p>Repellat quasi numquam quod dicta eveniet ab necessitatibus possimus nulla excepturi voluptatem?</p>
 
 <!-- Not recommended -->
-<div class="list”>
-  <a href=”url.html”>List item 1</a>
-  <a href=”url.html”>List item 2</a>
-  <a href=”url.html”>List item 3</a>
-  <a href=”url.html”>List item 4</a>
+<div class="list">
+  <a href="url.html">List item 1</a>
+  <a href="url.html">List item 2</a>
+  <a href="url.html">List item 3</a>
+  <a href="url.html">List item 4</a>
 </div>
 
 <!-- Recommended -->
-<ul class=”list”>
-  <li><a href=”url.html”>List 1</a></li>
-  <li><a href=”url.html”>List 2</a></li>
-  <li><a href=”url.html”>List 3</a></li>
-  <li><a href=”url.html”>List 4</a></li>
+<ul class="list">
+  <li><a href="url.html">List 1</a></li>
+  <li><a href="url.html">List 2</a></li>
+  <li><a href="url.html">List 3</a></li>
+  <li><a href="url.html">List 4</a></li>
 </ul>
+```
   </code>
 </pre>
 
@@ -249,22 +264,29 @@ Sometimes happens images to be used as buttons or icons. Never leave only image 
 <pre>
   <code>
 <!-- Not recommended -->
-<a href="url.html”><img src=”img/red-button.png”></a>
+```html
+<a href="url.html">
+  <img src="img/red-button.png">
+</a>
 
 <!-- Recommended -->
-<a href=”url.html”><img src=”img/red-button.png”><span>Click me</span></a>
-
+<a href="url.html">
+    <img src="img/red-button.png">
+    <span>Click me</span>
+</a>
+```
 and then something like this:
 
 a span { text-indent: -9999px; }
 
 or the modern version:
-
+```css
 a span {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden; 
 }
+```
   </code>
 </pre>
 
@@ -291,7 +313,7 @@ Where possible, avoid expensive CSS selectors. For example, **avoid the * wildca
 <pre>
   <code>
 /* Not recommended */
-
+```css
 section.intro { … }
 table#addresses { … }
 
@@ -303,6 +325,7 @@ table#addresses { … }
 #addresses { … }
 
 .column-left li { … }
+```
   </code>
 </pre>
 
@@ -313,10 +336,11 @@ Use shorthand properties where possible. Using shorthand properties is useful fo
 
 <pre>
   <code>
+```css
 /* Not recommended */
 .toolbar {
   border-top-style: none;
-  font-family:"Open Sans”, sans-serif;
+  font-family:"Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   padding-bottom: 2em;
@@ -328,9 +352,10 @@ Use shorthand properties where possible. Using shorthand properties is useful fo
 /* Recommended */
 .toolbar {
   border-top: 0;
-  font: 16px/1.6 ”Open Sans”, sans-serif;
+  font: 16px/1.6 ", Open Sans", sans-serif;
   padding: 0 1em 2em;
 }
+```
   </code>
 </pre>
 
@@ -341,10 +366,12 @@ Do not use units after 0 values unless they are required. Do not put 0s in front
 
 <pre>
   <code>
+```css
 /* Recommended */
 padding: 0;
 margin-top: 0;
 opacity: .54;
+```
   </code>
 </pre>
 
@@ -355,11 +382,13 @@ For color values that permit it, 3 character hexadecimal notation is shorter.
 
 <pre>
   <code>
+```css
 /* Not recommended */
 color: #eecc44;
 
 /* Recommended */
 color: #ec4;
+```
   </code>
 </pre>
 
@@ -370,7 +399,8 @@ Do not concatenate words and abbreviations in selectors by any characters other 
 
 <pre>
   <code>
-/* Not recommended: does not separate the words "demo" and “image” */
+```css
+/* Not recommended: does not separate the words "demo" and “image" */
 .demoimage {}
 /* Not recommended: uses underscore instead of hyphen */
 .error_status {}
@@ -378,6 +408,7 @@ Do not concatenate words and abbreviations in selectors by any characters other 
 /* Recommended */
 .demo-image {}
 .error-status {}
+```
   </code>
 </pre>
 
@@ -396,6 +427,7 @@ Also, if you specify multiple selectors, it's a good idea to start each on new l
 
 <pre>
   <code>
+  ```css
 .nav {
   color: #4a5b6c;
 }
@@ -404,6 +436,7 @@ Also, if you specify multiple selectors, it's a good idea to start each on new l
 .nav li a.active {
   color: red;
 }
+```
   </code>
 </pre>
 
@@ -418,6 +451,7 @@ End every declaration with a semicolon for consistency and extensibility reasons
 
 <pre>
   <code>
+  ```css
 /* Not recommended */
 .test {
   display: block;
@@ -429,6 +463,7 @@ End every declaration with a semicolon for consistency and extensibility reasons
   display: block;
   height: 100px;  /* ← */
 }
+```
   </code>
 </pre>
 
@@ -439,6 +474,7 @@ Use a space after a property name’s colon. Always use a single space between p
 
 <pre>
   <code>
+  ```css
 /* Not recommended */
 h3 {
   font-weight:bold;
@@ -448,6 +484,7 @@ h3 {
 h3 {
   font-weight: bold;
 }
+```
   </code>
 </pre>
 
@@ -458,6 +495,7 @@ Use a space between the last selector and the declaration block. Always use a si
 
 <pre>
   <code>
+  ```css
 /* Not recommended: missing space */
 #video{
   margin-top: 1em;
@@ -473,6 +511,7 @@ Use a space between the last selector and the declaration block. Always use a si
 #video {
   margin-top: 1em;
 }
+```
   </code>
 </pre>
 
@@ -530,11 +569,12 @@ Knowing first that this class inherits another whole set of rules from elsewhere
 
 <pre>
   <code>
+  ```css
 .btn {
 @extend .btn-small;
 // ...
 }
-
+```
   </code>
 </pre>
 
@@ -543,12 +583,13 @@ List "Regular" Styles Next
 
 <pre>
   <code>
+  ```css
 .btn {
 @extend .btn-small;
 width: 80px;
 // ...
 }
-
+```
   </code>
 </pre>
 
@@ -559,12 +600,14 @@ This visually separates the @extends and @includes as well as groups the @includ
 
 <pre>
   <code>
+```css
 .btn {
 @extend .btn-small;
 width: 80px;
 @include transition(all 0.3s ease-out);
 // ...
 }
+```
   </code>
 </pre>
 
@@ -575,17 +618,19 @@ And nothing goes after the nested stuff. And the same order as above within the 
 
 <pre>
   <code>
+```scss
 .btn {
-@extend .btn-small;
-width: 80px;
-@include transition(all 0.3s ease-out);
-span {
-background-color: red;
+    @extend .btn-small;
+    width: 80px;
+    @include transition(all 0.3s ease-out);
+    span {
+        background-color: red;
+    }
+    img {
+        border: 0;
+    }
 }
-img {
-border: 0;
-}
-}
+```
   </code>
 </pre>
 
@@ -596,35 +641,38 @@ Vendor prefixes are a time-sensitive thing so use @mixins. Boubon’s mixin **@p
 
 <pre>
   <code>
+```scss
 // SCSS
 .box {
-@prefixer(box-sizing, border-box, webkit moz spec);
+    @prefixer(box-sizing, border-box, webkit moz spec);
 }
 
 // Produced CSS
 .box {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
-
+```
   </code>
 </pre>
 
 
 Maximum Nesting: Three Levels Deep
 
-If you're deeper than that, you're writing a crappy selector that it's too reliant on HTML structure (fragile), too specific (too powerful), and not very reusable. 
+If you're deeper than that, you're writing a crappy selector that it's too reliant on HTML structure (fragile), too specific (too powerful), and not very reusable.
 
 <pre>
   <code>
+```scss
 .weather {
-.cities {
-li {
-      // no more!
+    .cities {
+        li {
+              // no more!
+        }
+    }
 }
-}
-}
+```
   </code>
 </pre>
 
@@ -637,6 +685,7 @@ The dependencies like Bourbon, colors, settings and mixins generate no compiled 
 
 <pre>
   <code>
+```css
 /* Vendor/Global Dependencies */
 @import "bourbon";
 @import "neat";
@@ -644,9 +693,11 @@ The dependencies like Bourbon, colors, settings and mixins generate no compiled 
 /* Author Dependencies */
 @import "global/settings";
 @import "global/helpers";
+
 /* Base */
-@import “global/layout”;
-@import “global/typo”;
+@import “global/layout";
+@import “global/typo";
+
 /* Elements */
 @import "elements/tabs";
 @import "elements/buttons";
@@ -654,7 +705,7 @@ The dependencies like Bourbon, colors, settings and mixins generate no compiled 
 /* Modules */
 @import "modules/header";
 @import "modules/footer";
-
+```
   </code>
 </pre>
 
@@ -667,27 +718,32 @@ Typically we suggest to separate SCSS’s into following file structure:
 
 <pre>
   <code>
+  ```css
 style.scss /* Main file no styles directly in them. It is just "table of content" */
-_layout.scss /* Base-level layout (margin, padding, sizing) */
-_base.scss  /* Base-level tags */
-/global
-_settings.scss /* Constants and variables - colors, sizes, paddings etc. */
-_helpers.scss  /* Mixins and function definitions */
-_reset.scss     /* Usually this is Normalize.css */
-_animations.scss /* Keyframe animations */
-_typo.scss /* Base-level typography (colors, fonts) */
-/elements
-_buttons.scss /* Button’s definitions */
-_form-elements.scss /* Input boxes etc */
-_panels.scss
-/modules
-_header.scss
-_footer.scss
-_forms.scss /* Forms’ styling */
-_navigation.scss /* All about site navigation */
-_modals.scss /* Modal dialogs */
-/vendor  /* All third party stuff */
+    _layout.scss /* Base-level layout (margin, padding, sizing) */
+    _base.scss  /* Base-level tags */
 
+/global
+    _settings.scss /* Constants and variables - colors, sizes, paddings etc. */
+    _helpers.scss  /* Mixins and function definitions */
+    _reset.scss     /* Usually this is Normalize.css */
+    _animations.scss /* Keyframe animations */
+    _typo.scss /* Base-level typography (colors, fonts) */
+
+/elements
+    _buttons.scss /* Button’s definitions */
+    _form-elements.scss /* Input boxes etc */
+    _panels.scss
+
+/modules
+    _header.scss
+    _footer.scss
+    _forms.scss /* Forms’ styling */
+    _navigation.scss /* All about site navigation */
+    _modals.scss /* Modal dialogs */
+
+/vendor  /* All third party stuff */
+```
   </code>
 </pre>
 
