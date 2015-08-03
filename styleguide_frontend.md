@@ -688,47 +688,47 @@ style.scss /* Main file no styles directly in them. It is just "table of content
 * * *
 
 
-**Modules often in use:**
+Modules often in use:
 
 [Despark wiki page with tools and libraries ](http://dev.despark.com/wiki/index.php/Front-end_Tools_and_Libraries)
 
 All in one UI
 
-**[jQuery U**I](http://jqueryui.com/) - set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.
+[jQuery UI](http://jqueryui.com/) - set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.
 
 Animations
 
-**[GSA**P](http://www.greensock.com/gsap-js/) - Professional-Grade HTML5 Animation
+[GSAP](http://www.greensock.com/gsap-js/) - Professional-Grade HTML5 Animation
 
 Modal Dialogs 
 
-**[jQuery UI Dialo**g](http://jqueryui.com/dialog/)
+[jQuery UI Dialog](http://jqueryui.com/dialog/)
 
  
 
-**[Twitter Bootstrap Modal**s](http://getbootstrap.com/javascript/#modals)
+[Twitter Bootstrap Modals](http://getbootstrap.com/javascript/#modals)
 
-**[http://tympanus.net/Development/ModalWindowEffects**/](http://tympanus.net/Development/ModalWindowEffects/)
+[http://tympanus.net/Development/ModalWindowEffects/](http://tympanus.net/Development/ModalWindowEffects/)
 
 Charts
 
-**[amChart**s](http://www.amcharts.com/)** - **very powerful but it is not free 
+[amCharts](http://www.amcharts.com/) - very powerful but it is not free 
 
-**[Google Chart**s](https://developers.google.com/chart/)
+[Google Charts](https://developers.google.com/chart/)
 
 Feature detection
 
-**[Moderniz**r](http://modernizr.com/)
+[Modernizr](http://modernizr.com/)
 
 Carousels & Sliders 
 
 [Owl Carousel](http://owlgraphic.com/owlcarousel/) - responsive, touch, nice documentation
 
-**[jCoverfli**p](http://www.jcoverflip.com/) 
+[jCoverflip](http://www.jcoverflip.com/) 
 
-**[FlexSlider **2](http://flexslider.woothemes.com/) - responsive, supports touch events
+[FlexSlider 2](http://flexslider.woothemes.com/) - responsive, supports touch events
 
-**[Superslide**s](http://nicinabox.com/superslides/) - Full screen slider, supports touch events
+[Superslides](http://nicinabox.com/superslides/) - Full screen slider, supports touch events
 
 [http://tympanus.net/Development/SidebarTransitions/](http://tympanus.net/Development/SidebarTransitions/)
 
